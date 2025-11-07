@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Get Well Soon, Azmi ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        @media (max-width: 600px) {
+            body {
+                padding: 0;
+                background: linear-gradient(160deg, var(--bg1), var(--bg2));
+                overflow-y: auto;
+            }
+
+            .wrap {
+                padding: 16px;
+                align-items: flex-start;
+            }
+
+            .card {
+                padding: 26px 20px;
+                border-radius: 16px;
+                min-height: auto;
+                box-shadow: 0 8px 24px rgba(72, 20, 40, 0.1);
+            }
+
+            .title {
+                font-size: 34px;
+                text-align: center;
+            }
+
+            .subtitle {
+                font-size: 15px;
+                text-align: center;
+                margin-bottom: 22px;
+            }
+
+            .meta {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+                margin-bottom: 22px !important;
+            }
+
+            .floating-photo {
+                width: 130px;
+                height: 130px;
+                border-radius: 18px;
+                border-width: 5px;
+                box-shadow: 0 6px 20px rgba(80, 20, 40, 0.08);
+            }
+
+            .message {
+                font-size: 15px;
+                line-height: 1.6;
+                max-width: none;
+                padding: 0 4px;
+            }
+
+            .btn {
+                flex: 1 1 100%;
+                padding: 12px 0;
+                font-size: 15px;
+                border-radius: 12px;
+            }
+
+            .btn-primary {
+                background: linear-gradient(90deg, var(--accent), var(--accent-2));
+                color: white;
+                box-shadow: 0 6px 16px rgba(255, 120, 160, 0.16);
+            }
+
+            .btn-ghost {
+                background: rgba(255, 255, 255, 0.6);
+                border: 1px solid rgba(120, 60, 80, 0.1);
+                font-size: 15px;
+            }
+
+            .footer {
+                position: relative;
+                margin-top: 32px;
+                text-align: center;
+                left: 0;
+                bottom: auto;
+                width: 100%;
+                font-size: 13px;
+                color: #86505f;
+                opacity: 0.9;
+                padding-bottom: 16px;
+            }
+        }
+
+        :root {
+            --bg1: #ffefe9;
+            --bg2: #fff6f9;
+            --accent: #ff6b9f;
+            --accent-2: #ffc3d6;
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --glass: rgba(255, 255, 255, 0.35);
+            --text: #3a2e3a;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color: var(--text);
+            background: radial-gradient(1200px 600px at 10% 10%, var(--bg2), transparent),
+                linear-gradient(120deg, var(--bg1), var(--bg2));
+            overflow-y: auto;
+            /* ubah dari hidden ke auto */
+            overflow-x: hidden;
+        }
+
+        /* animated soft gradient */
+        .sky {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            background: linear-gradient(120deg, rgba(255, 200, 220, 0.06), rgba(255, 220, 240, 0.04));
+            animation: slowShift 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes slowShift {
+            from {
+                transform: translateY(0)
+            }
+
+            to {
+                transform: translateY(-40px)
+            }
+        }
+
+        /* floating hearts */
+        .hearts {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none
+        }
+
+        .heart {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            transform-origin: center;
+            opacity: 0.9;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.05))
+        }
+
+        /* main layout */
+        .wrap {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .container {
+            width: min(1100px, 94%);
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 28px;
+            align-items: center;
+        }
+
+        /* 3D card */
+        .card-wrap {
+            perspective: 1200px
+        }
+
+        .card {
+            position: relative;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65));
+            border-radius: 20px;
+            padding: 36px;
+            min-height: 420px;
+            transform-style: preserve-3d;
+            transition: transform 0.12s ease-out;
+            box-shadow: 0 12px 40px rgba(72, 20, 40, 0.12);
+            backdrop-filter: blur(6px);
+        }
+
+        .card .depth-layer {
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            pointer-events: none
+        }
+
+        .card .layer-back {
+            transform: translateZ(-40px) scale(1.03);
+            background: linear-gradient(120deg, rgba(255, 160, 190, 0.06), transparent)
+        }
+
+        .card .layer-mid {
+            transform: translateZ(-20px) scale(1.015);
+            background: linear-gradient(60deg, rgba(255, 200, 220, 0.03), transparent)
+        }
+
+        .title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            margin: 0 0 8px;
+            color: #6b2542
+        }
+
+        .subtitle {
+            margin: 0 0 18px;
+            font-weight: 600;
+            color: #7d3a4f
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #4a2f3e;
+            max-width: 60ch;
+        }
+
+        /* interactive area (right column) */
+        .panel {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: stretch
+        }
+
+        .note-card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(65, 22, 40, 0.06);
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(90, 50, 70, 0.08);
+            font-size: 14px
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical
+        }
+
+        .btn {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            font-weight: 600
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: white;
+            box-shadow: 0 8px 18px rgba(255, 120, 160, 0.16)
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid rgba(120, 60, 80, 0.07);
+            color: var(--text)
+        }
+
+        .preview {
+            min-height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center
+        }
+
+        /* little interactive pieces */
+        .floating-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(80, 20, 40, 0.08);
+            border: 6px solid rgba(255, 255, 255, 0.55);
+            background: linear-gradient(180deg, var(--accent-2), transparent)
+        }
+
+        .meta {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        /* responsive */
+        @media (max-width:880px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: 360px
+            }
+
+            .title {
+                font-size: 40px
+            }
+        }
+
+        /* confetti hearts canvas overlay */
+        canvas#confetti {
+            position: fixed;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none
+        }
+
+        .footer {
+            position: relative;
+            /* sebelumnya: fixed */
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #86505f;
+            opacity: 0.9;
+            padding: 20px 0;
+        }
+
+        /* focus outlines */
+        input:focus,
+        textarea:focus,
+        button:focus {
+            outline: 3px solid rgba(255, 120, 160, 0.12);
+            outline-offset: 2px
+        }
+
+        .floating-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-photo img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        .floating-photo svg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sky" aria-hidden="true"></div>
+    <div class="hearts" id="hearts" aria-hidden="true"></div>
+
+    <div class="wrap">
+        <div class="container">
+            <div class="card-wrap">
+                <div class="card" id="card" role="region" aria-label="Kartu ucapan Azmi">
+                    <div class="depth-layer layer-back"></div>
+                    <div class="depth-layer layer-mid"></div>
+
+                    <h1 class="title">Untuk Azmi</h1>
+                    <p class="subtitle">Semoga cepat pulih — setiap hari adalah hadiah ❤️</p>
+
+                    <div class="meta" style="gap:18px;margin-bottom:14px">
+                        <div class="floating-photo">
+                            <img src="https://eko748.github.io/img/azmi.png" alt="Azmi" />
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="g" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#ffdede" />
+                                        <stop offset="1" stop-color="#fff0f8" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#g)" opacity="0.3" />
+                                <g transform="translate(36,28) scale(0.9)" opacity="0.3">
+                                    <circle cx="40" cy="40" r="24" fill="#ffe6f0" />
+                                    <path d="M0 120 C40 40 120 40 160 120 Z" fill="#ffc3d6" />
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div style="flex:1">
+                            <p class="message" id="readableMsg">
+                                Hai Azmi, semoga ketenangan mengisi hari-harimu. Kiriman kecil ini penuh kasih dan doa.
+                                Istirahat yang cukup agar dunia selalu diwarnai senyuman indahmu ❤️
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap">
+                        <button class="btn btn-primary" id="sendHeartBtn">Untukmu ❤️</button>
+                        <button class="btn btn-ghost" id="toggleMusic">Putar Musik Lembut</button>
+                        <button class="btn btn-ghost" id="tiltReset" style="display: none;">Reset 3D</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <aside class="panel" style="display: none;">
+                <div class="note-card" style="display: none;">
+                    <label for="fromName" style="font-weight:600;margin-bottom:6px;display:block">Nama pengirim</label>
+                    <input id="fromName" type="text" placeholder="Contoh: Siti, Keluarga, Sahabat..." value="Sahabatmu">
+
+                    <label for="messageText" style="font-weight:600;margin-top:12px;display:block">Tulis pesan
+                        singkat</label>
+                    <textarea id="messageText"
+                        placeholder="Tulis harapan dan doa untuk Azmi...">Semoga cepat sembuh, Azmi. Istirahat yang cukup dan jangan lupa senyum :)</textarea>
+
+                    <div style="display:flex; gap:8px; margin-top:12px; align-items:center">
+                        <button class="btn btn-primary" id="previewBtn">Pratinjau</button>
+                        <button class="btn btn-ghost" id="saveImg">Simpan sebagai Gambar</button>
+                    </div>
+                </div>
+
+                <div class="note-card">
+                    <div style="display:flex; gap:10px; align-items:center; justify-content:space-between">
+                        <small style="color:#7d3a4f">Interaktif • 3D • Responsif</small>
+                        <div class="preview" id="livePreview">Pesan akan muncul di sini</div>
+                    </div>
+                </div>
+
+                <div class="note-card" style="text-align:center">
+                    <small style="display:block;margin-bottom:8px">Untuk Azmi — sentuhan lembut dan doa</small>
+                    <button class="btn btn-primary" id="makeConfetti">Rayakan Sedikit</button>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <div class="footer">Made with ❤️ untuk Azmi — dari Eko</div>
+
+    <!-- optional soothing melody (public domain short loop) -->
+    <audio id="music" loop src="https://eko748.github.io/assets/pdf/musik.mp3" aria-hidden="true"></audio>
+
+    <script>
+        // --- small utilities ---
+        const card = document.getElementById('card');
+        const heartsRoot = document.getElementById('hearts');
+        const confettiCanvas = document.getElementById('confetti');
+        const ctx = confettiCanvas.getContext('2d');
+
+        // resize canvas
+        function resizeCanvas() { confettiCanvas.width = innerWidth; confettiCanvas.height = innerHeight }
+        addEventListener('resize', resizeCanvas); resizeCanvas();
+
+        // floating hearts generator (CSS elements)
+        function spawnHeart(x, y, size = 28, hue = 330) {
+            const el = document.createElement('div');
+            el.className = 'heart';
+            el.style.left = (x - size / 2) + 'px';
+            el.style.top = (y - size / 2) + 'px';
+            el.style.width = size + 'px'; el.style.height = size + 'px';
+            el.style.opacity = 0.95;
+            const scale = (Math.random() * 0.6 + 0.8).toFixed(2);
+            el.style.transform = `scale(${scale}) rotate(${(Math.random() * 30 - 15)}deg)`;
+            el.innerHTML = `<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" xmlns='http://www.w3.org/2000/svg'><path d="M12 21s-7-4.35-9-7.5C-0.5 8.5 5 4 9 7c1.5 1.2 2.5 1.5 3 1.5s1.5-.3 3-1.5c4-3 9.5 1.5 6 6.5C19 16.65 12 21 12 21z" fill="hsl(${hue} 75% 66%)" /></svg>`;
+            heartsRoot.appendChild(el);
+            // animate
+            const animY = (Math.random() * 140 + 80) * -1;
+            el.animate([{ transform: el.style.transform, opacity: 1, offset: 0 }, { transform: `translateY(${animY}px) ${el.style.transform}`, opacity: 0, offset: 1 }], { duration: 2200 + Math.random() * 1500, easing: 'cubic-bezier(.2,.9,.2,1)' }).onfinish = () => el.remove();
+        }
+
+        // seed some hearts drifting
+        for (let i = 0; i < 8; i++) { setTimeout(() => spawnHeart(Math.random() * innerWidth, Math.random() * innerHeight, 20 + Math.random() * 36, 320 + Math.random() * 40), i * 300) }
+
+        // 3D tilt interaction
+        let resetTimeout;
+        function onMove(e) {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            const rx = (y * -12).toFixed(2);
+            const ry = (x * 18).toFixed(2);
+            card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`;
+            clearTimeout(resetTimeout);
+            resetTimeout = setTimeout(() => card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)', 2200);
+        }
+        card.addEventListener('mousemove', onMove);
+        card.addEventListener('touchmove', (ev) => onMove(ev.touches[0]));
+        document.getElementById('tiltReset').addEventListener('click', () => card.style.transform = 'rotateX(0) rotateY(0) translateZ(0)');
+
+        // preview update
+        const fromName = document.getElementById('fromName');
+        const messageText = document.getElementById('messageText');
+        const livePreview = document.getElementById('livePreview');
+        function updatePreview() {
+            livePreview.innerHTML = `<div style=\"padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,240,245,0.5));box-shadow:inset 0 2px 6px rgba(0,0,0,0.03); min-height:80px; width:100%\">` +
+                `<div style=\"font-weight:700;margin-bottom:6px;color:#6b2542\">Dari: ${escapeHtml(fromName.value || 'Sahabat')}</div>` +
+                `<div style=\"white-space:pre-line;font-size:15px;color:#52283a\">${escapeHtml(messageText.value || '')}</div>` +
+                `</div>`;
+        }
+        function escapeHtml(s) { return s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;') }
+        fromName.addEventListener('input', updatePreview); messageText.addEventListener('input', updatePreview);
+        document.getElementById('previewBtn').addEventListener('click', () => { updatePreview(); livePreview.scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+        updatePreview();
+
+        // confetti hearts (canvas)
+        let confettis = [];
+        function spawnConfettiBurst(x = innerWidth / 2, y = innerHeight / 2) {
+            for (let i = 0; i < 36; i++) {
+                confettis.push({ x, y, vx: (Math.random() * 8 - 4), vy: (Math.random() * -6 - 2), size: 6 + Math.random() * 10, life: 80 + Math.random() * 40, hue: 320 + Math.random() * 40, rot: Math.random() * 6 });
+            }
+        }
+        function render() {
+            ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            for (let i = confettis.length - 1; i >= 0; i--) {
+                const p = confettis[i];
+                p.x += p.vx; p.y += p.vy; p.vy += 0.28; p.life--;
+                // draw heart-shaped particle
+                ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.beginPath();
+                // simple heart using arcs
+                const s = p.size / 6;
+                ctx.fillStyle = `hsl(${p.hue} 80% 60%)`;
+                ctx.moveTo(0, -6 * s);
+                ctx.bezierCurveTo(3 * s, -12 * s, 12 * s, -12 * s, 12 * s, -4 * s);
+                ctx.bezierCurveTo(12 * s, 6 * s, 0, 12 * s, 0, 18 * s);
+                ctx.bezierCurveTo(0, 12 * s, -12 * s, 6 * s, -12 * s, -4 * s);
+                ctx.bezierCurveTo(-12 * s, -12 * s, -3 * s, -12 * s, 0, -6 * s);
+                ctx.fill(); ctx.restore();
+                if (p.life <= 0 || p.y > innerHeight + 80) confettis.splice(i, 1);
+            }
+            requestAnimationFrame(render);
+        }
+        render();
+
+        document.getElementById('makeConfetti').addEventListener('click', () => spawnConfettiBurst(innerWidth * 0.55, innerHeight * 0.45));
+
+        // send heart button -> spawn hearts + confetti
+        document.getElementById('sendHeartBtn').addEventListener('click', (e) => {
+            const r = e.target.getBoundingClientRect();
+            spawnHeart(r.left + r.width / 2, r.top + 8, 36, 330);
+            spawnConfettiBurst(r.left + r.width / 2, r.top + 8);
+            // gentle pulse animation
+            e.target.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }, { transform: 'scale(1)' }], { duration: 600, easing: 'cubic-bezier(.2,.9,.2,1)' });
+        });
+
+        // save as image (render the card into an image using foreignObject + SVG)
+        document.getElementById('saveImg').addEventListener('click', async () => {
+            try {
+                const svg = `<?xml version='1.0' encoding='utf-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><foreignObject width='100%' height='100%'>` +
+                    encodeURIComponent(document.getElementById('card').outerHTML) +
+                    `</foreignObject></svg>`;
+                const img = new Image();
+                img.src = 'data:image/svg+xml;charset=utf-8,' + svg;
+                await new Promise(r => img.onload = r);
+                const c = document.createElement('canvas'); c.width = 1200; c.height = 700; const cctx = c.getContext('2d');
+                cctx.fillStyle = '#fff0f5'; cctx.fillRect(0, 0, c.width, c.height);
+                cctx.drawImage(img, 0, 0);
+                const link = document.createElement('a'); link.download = `ucapan-azmi.png`;
+                link.href = c.toDataURL('image/png'); link.click();
+            } catch (err) { alert('Gagal menyimpan: ' + err.message) }
+        });
+
+        const music = document.getElementById('music');
+        const btnMusic = document.getElementById('toggleMusic');
+
+        btnMusic.addEventListener('click', function () {
+            if (!music.src) {
+                // gunakan link MP3 yang valid
+                music.src = 'https://eko748.github.io/assets/pdf/musik.mp3';
+                music.load();
+            }
+
+            if (music.paused) {
+                music.play().then(() => {
+                    this.textContent = 'Hentikan Musik';
+                }).catch(err => {
+                    console.warn('Tidak bisa autoplay:', err);
+                    alert('Klik tombol play di kontrol audio jika musik tidak berbunyi.');
+                });
+            } else {
+                music.pause();
+                this.textContent = 'Putar Musik Lembut';
+            }
+        });
+
+        // accessibility: keyboard trigger for send heart
+        document.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' && (ev.ctrlKey || ev.metaKey)) { document.getElementById('sendHeartBtn').click(); } });
+
+        // small helper: spawn gentle background hearts periodically
+        setInterval(() => spawnHeart(Math.random() * innerWidth, innerHeight - 60 - Math.random() * 200, 22 + Math.random() * 18, 320 + Math.random() * 40), 900);
+
+    </script>
+</body>
+
+</html>
