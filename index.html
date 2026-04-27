@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Get Well Soon, Azmi ❤️</title>
-    <link rel="icon" type="image/png" href="https://eko748.github.io/img/azmi.png">
+    <title>Get Well Soon, Sayang ❤️</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;800&display=swap"
@@ -395,16 +394,16 @@
     <div class="wrap">
         <div class="container">
             <div class="card-wrap">
-                <div class="card" id="card" role="region" aria-label="Kartu ucapan Azmi">
+                <div class="card" id="card" role="region" aria-label="Kartu ucapan Indah">
                     <div class="depth-layer layer-back"></div>
                     <div class="depth-layer layer-mid"></div>
 
-                    <h1 class="title">Untuk Azmi</h1>
-                    <p class="subtitle">Semoga cepat pulih — setiap hari adalah hadiah ❤️</p>
+                    <h1 class="title">Untuk Indah Sayangku ❤️</h1>
+                    <p class="subtitle">Semoga cepat pulih — setiap hari tanpamu dunia terasa hampa ❤️</p>
 
                     <div class="meta" style="gap:18px;margin-bottom:14px">
                         <div class="floating-photo">
-                            <img src="https://eko748.github.io/img/azmi.png" alt="Azmi" />
+                            <img src="img/indah.jpg" alt="Indah" />
                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="g" x1="0" x2="1">
@@ -422,14 +421,14 @@
 
                         <div style="flex:1">
                             <p class="message" id="readableMsg">
-                                Hai Azmi, semoga ketenangan mengisi hari-harimu. Kiriman kecil ini penuh kasih dan doa.
+                                Hai Sayang, semoga ketenangan mengisi hari-harimu. Kiriman kecil ini penuh kasih dan doa.
                                 Istirahat yang cukup agar dunia selalu diwarnai senyuman indahmu ❤️
                             </p>
                         </div>
                     </div>
                     <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap">
                         <button class="btn btn-primary" id="sendHeartBtn">Untukmu ❤️</button>
-                        <button class="btn btn-ghost" id="toggleMusic">Putar Musik Lembut</button>
+                        <button class="btn btn-ghost" id="toggleMusic">Putar</button>
                         <button class="btn btn-ghost" id="tiltReset" style="display: none;">Reset 3D</button>
                     </div>
 
@@ -444,7 +443,7 @@
                     <label for="messageText" style="font-weight:600;margin-top:12px;display:block">Tulis pesan
                         singkat</label>
                     <textarea id="messageText"
-                        placeholder="Tulis harapan dan doa untuk Azmi...">Semoga cepat sembuh, Azmi. Istirahat yang cukup dan jangan lupa senyum :)</textarea>
+                        placeholder="Tulis harapan dan doa untuk Indah...">Semoga cepat sembuh, Indah. Istirahat yang cukup dan jangan lupa senyum :)</textarea>
 
                     <div style="display:flex; gap:8px; margin-top:12px; align-items:center">
                         <button class="btn btn-primary" id="previewBtn">Pratinjau</button>
@@ -460,7 +459,7 @@
                 </div>
 
                 <div class="note-card" style="text-align:center">
-                    <small style="display:block;margin-bottom:8px">Untuk Azmi — sentuhan lembut dan doa</small>
+                    <small style="display:block;margin-bottom:8px">Untuk Indah — sentuhan lembut dan doa</small>
                     <button class="btn btn-primary" id="makeConfetti">Rayakan Sedikit</button>
                 </div>
             </aside>
@@ -469,7 +468,7 @@
     </div>
 
     <canvas id="confetti" aria-hidden="true"></canvas>
-    <div class="footer">Made with ❤️ untuk Azmi — dari Eko</div>
+    <div class="footer">Made with ❤️ untuk Indah — dari Eko</div>
 
     <!-- optional soothing melody (public domain short loop) -->
     <audio id="music" loop src="https://eko748.github.io/assets/pdf/musik.mp3" aria-hidden="true"></audio>
@@ -588,7 +587,7 @@
                 const c = document.createElement('canvas'); c.width = 1200; c.height = 700; const cctx = c.getContext('2d');
                 cctx.fillStyle = '#fff0f5'; cctx.fillRect(0, 0, c.width, c.height);
                 cctx.drawImage(img, 0, 0);
-                const link = document.createElement('a'); link.download = `ucapan-azmi.png`;
+                const link = document.createElement('a'); link.download = `ucapan-indah.png`;
                 link.href = c.toDataURL('image/png'); link.click();
             } catch (err) { alert('Gagal menyimpan: ' + err.message) }
         });
@@ -605,14 +604,14 @@
 
             if (music.paused) {
                 music.play().then(() => {
-                    this.textContent = 'Hentikan Musik';
+                    this.textContent = 'Hentikan';
                 }).catch(err => {
                     console.warn('Tidak bisa autoplay:', err);
                     alert('Klik tombol play di kontrol audio jika musik tidak berbunyi.');
                 });
             } else {
                 music.pause();
-                this.textContent = 'Putar Musik Lembut';
+                this.textContent = 'Putar';
             }
         });
 
@@ -626,4 +625,3 @@
 </body>
 
 </html>
-
